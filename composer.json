@@ -15,7 +15,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"aliyun\\dm\\": "src/aliyun/dm"
+			"aliyun\\dm\\": "aliyun/dm"
 		}
 	}
 
