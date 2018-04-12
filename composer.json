@@ -9,7 +9,9 @@
 	}],
 	"minimum-stability": "dev",
 	"require": {
-		"php": ">=7.0.0"
+		"php": ">=7.0.0",
+		 "qingpai/aliyun-php-sdk-core": "^1.0.0"
+
 	},
 	"autoload": {
 		"psr-4": {
