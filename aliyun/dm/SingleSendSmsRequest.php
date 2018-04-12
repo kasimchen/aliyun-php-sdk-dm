@@ -17,8 +17,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace aliyun\dm\request;
 
+namespace aliyun\dm;
 use aliyun\core\RpcAcsRequest;
 
 class SingleSendSmsRequest extends RpcAcsRequest

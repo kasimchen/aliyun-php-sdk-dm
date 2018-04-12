@@ -17,14 +17,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace aliyun\dm\request;
+
+namespace aliyun\dm;
 use aliyun\core\RpcAcsRequest;
 
-class BatchSendMailRequest extends RpcAcsRequest
+class SingleSendMailRequest extends RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dm", "2015-11-23", "BatchSendMail");
+		parent::__construct("Dm", "2015-11-23", "SingleSendMail");
+		parent::setMethod("POST");
 	}
 
 	private  $ownerId;
@@ -33,15 +35,23 @@ class BatchSendMailRequest extends RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $templateName;
-
 	private  $accountName;
-
-	private  $receiversName;
 
 	private  $addressType;
 
 	private  $tagName;
+
+	private  $replyToAddress;
+
+	private  $toAddress;
+
+	private  $subject;
+
+	private  $htmlBody;
+
+	private  $textBody;
+
+	private  $fromAlias;
 	private  $clickTrace;
 	public function getClickTrace() {
 		return $this->clickTrace;
@@ -79,15 +89,6 @@ class BatchSendMailRequest extends RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getTemplateName() {
-		return $this->templateName;
-	}
-
-	public function setTemplateName($templateName) {
-		$this->templateName = $templateName;
-		$this->queryParameters["TemplateName"]=$templateName;
-	}
-
 	public function getAccountName() {
 		return $this->accountName;
 	}
@@ -95,15 +96,6 @@ class BatchSendMailRequest extends RpcAcsRequest
 	public function setAccountName($accountName) {
 		$this->accountName = $accountName;
 		$this->queryParameters["AccountName"]=$accountName;
-	}
-
-	public function getReceiversName() {
-		return $this->receiversName;
-	}
-
-	public function setReceiversName($receiversName) {
-		$this->receiversName = $receiversName;
-		$this->queryParameters["ReceiversName"]=$receiversName;
 	}
 
 	public function getAddressType() {
@@ -122,6 +114,60 @@ class BatchSendMailRequest extends RpcAcsRequest
 	public function setTagName($tagName) {
 		$this->tagName = $tagName;
 		$this->queryParameters["TagName"]=$tagName;
+	}
+
+	public function getReplyToAddress() {
+		return $this->replyToAddress;
+	}
+
+	public function setReplyToAddress($replyToAddress) {
+		$this->replyToAddress = $replyToAddress;
+		$this->queryParameters["ReplyToAddress"]=$replyToAddress;
+	}
+
+	public function getToAddress() {
+		return $this->toAddress;
+	}
+
+	public function setToAddress($toAddress) {
+		$this->toAddress = $toAddress;
+		$this->queryParameters["ToAddress"]=$toAddress;
+	}
+
+	public function getSubject() {
+		return $this->subject;
+	}
+
+	public function setSubject($subject) {
+		$this->subject = $subject;
+		$this->queryParameters["Subject"]=$subject;
+	}
+
+	public function getHtmlBody() {
+		return $this->htmlBody;
+	}
+
+	public function setHtmlBody($htmlBody) {
+		$this->htmlBody = $htmlBody;
+		$this->queryParameters["HtmlBody"]=$htmlBody;
+	}
+
+	public function getTextBody() {
+		return $this->textBody;
+	}
+
+	public function setTextBody($textBody) {
+		$this->textBody = $textBody;
+		$this->queryParameters["TextBody"]=$textBody;
+	}
+
+	public function getFromAlias() {
+		return $this->fromAlias;
+	}
+
+	public function setFromAlias($fromAlias) {
+		$this->fromAlias = $fromAlias;
+		$this->queryParameters["FromAlias"]=$fromAlias;
 	}
 	
 }
